@@ -221,7 +221,7 @@ function renderActivityList() {
   if (searchQuery) {
     activities = activities.filter((a) => {
       const info = getTypeInfo(a.category, a.type);
-      const text = \`\${info.label} \${a.note || ''}\`.toLowerCase();
+      const text = `${info.label} ${a.note || ''}`.toLowerCase();
       return text.includes(searchQuery);
     });
   }
@@ -305,15 +305,15 @@ function renderActivityList() {
           <div class="form-group">
             <label class="form-label form-label-required" for="edit-category">Category</label>
             <select class="form-select" id="edit-category" name="category" required>
-              ${Object.values(CATEGORIES).map((c) => \`
-                <option value="\${escapeHtml(c.id)}" \${c.id === activity.category ? 'selected' : ''}>\${c.icon} \${escapeHtml(c.label)}</option>
-              \`).join('')}
+              ${Object.values(CATEGORIES).map((c) => `
+                <option value="${escapeHtml(c.id)}" ${c.id === activity.category ? 'selected' : ''}>${c.icon} ${escapeHtml(c.label)}</option>
+              `).join('')}
             </select>
           </div>
           <div class="form-group">
             <label class="form-label form-label-required" for="edit-type">Type</label>
             <select class="form-select" id="edit-type" name="type" required>
-              ${types.map((t) => \`<option value="\${escapeHtml(t.key)}" \${t.key === activity.type ? 'selected' : ''}>\${escapeHtml(t.label)} (\${t.factor} kg/\${t.unit})</option>\`).join('')}
+              ${types.map((t) => `<option value="${escapeHtml(t.key)}" ${t.key === activity.type ? 'selected' : ''}>${escapeHtml(t.label)} (${t.factor} kg/${t.unit})</option>`).join('')}
             </select>
           </div>
           <div class="form-group">
@@ -356,7 +356,7 @@ function renderActivityList() {
           editCategory.addEventListener('change', () => {
             const cat = editCategory.value;
             const newTypes = getTypesForCategory(cat);
-            editType.innerHTML = newTypes.map((t) => \`<option value="\${escapeHtml(t.key)}">\${escapeHtml(t.label)} (\${t.factor} kg/\${t.unit})</option>\`).join('');
+            editType.innerHTML = newTypes.map((t) => `<option value="${escapeHtml(t.key)}">${escapeHtml(t.label)} (${t.factor} kg/${t.unit})</option>`).join('');
           });
         }
 
@@ -379,7 +379,7 @@ function renderActivityList() {
             if (!result.success) {
               const errorsDiv = document.getElementById('edit-form-errors');
               if (errorsDiv) {
-                errorsDiv.innerHTML = result.errors.map((e) => \`<p class="form-error">⚠️ \${escapeHtml(e)}</p>\`).join('');
+                errorsDiv.innerHTML = result.errors.map((e) => `<p class="form-error">⚠️ ${escapeHtml(e)}</p>`).join('');
               }
               return;
             }
