@@ -17,6 +17,7 @@
     "vitest": "^3.2.1",
     "@vitest/coverage-istanbul": "^3.2.1",
     "happy-dom": "^16.8.0",
+    "terser": "^5.30.3",
     "eslint": "^9.28.0",
     "@eslint/js": "^9.28.0",
     "globals": "^16.1.0"
