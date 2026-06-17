@@ -5,13 +5,13 @@
 
 import { escapeHtml } from '../utils/sanitize.js';
 import { formatEmission } from '../utils/helpers.js';
-import { CATEGORIES } from '../utils/constants.js';
 import { getCategoryBreakdown } from '../services/carbon.service.js';
 import {
   getPersonalizedTips,
   checkAchievements,
   getRandomFact,
   getTrend,
+  getCategoryInsight,
 } from '../services/insights.service.js';
 import { renderBarChart } from '../services/chart.service.js';
 
@@ -25,6 +25,33 @@ export function render(container) {
   const fact = getRandomFact();
   const trend = getTrend();
   const breakdown = getCategoryBreakdown('month');
+  
+  const topCategory = breakdown.filter((c) => c.emission > 0).sort((a, b) => b.emission - a.emission)[0];
+  let deepDiveHtml = '';
+  if (topCategory) {
+    const insight = getCategoryInsight(topCategory.category);
+    if (insight && insight.topTypes.length > 0) {
+      deepDiveHtml = `
+        <div class="card" style="margin-bottom: var(--space-6);" role="region" aria-label="Category Deep Dive">
+          <h3 class="card-title" style="margin-bottom: var(--space-3);">🔍 Deep Dive: ${insight.category.icon} ${escapeHtml(insight.category.label)}</h3>
+          <p style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--space-3);">
+            Highest emission source this month (${escapeHtml(formatEmission(insight.monthlyEmission))}).
+          </p>
+          <div>
+            <h4 style="font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary); margin-bottom: var(--space-2);">Top Sources</h4>
+            <ul style="list-style: none; padding-left: 0;">
+              ${insight.topTypes.slice(0, 3).map((t) => `
+                <li style="font-size: var(--font-size-sm); margin-bottom: var(--space-1); display: flex; justify-content: space-between;">
+                  <span>${escapeHtml(t.type.replace('_', ' '))}</span>
+                  <span style="font-weight: 600;">${escapeHtml(formatEmission(t.totalEmission))}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+        </div>
+      `;
+    }
+  }
 
   container.innerHTML = `
     <div class="animate-fade-up">
@@ -102,6 +129,8 @@ export function render(container) {
               <canvas id="bar-chart" aria-label="Category emission comparison bar chart"></canvas>
             </div>
           </div>
+
+          ${deepDiveHtml}
 
           <!-- Did You Know -->
           <div class="fact-card" role="region" aria-label="Environmental fact" style="margin-bottom: var(--space-6);">

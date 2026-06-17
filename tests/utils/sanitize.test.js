@@ -1,6 +1,7 @@
 /**
  * @fileoverview Unit tests for sanitization utilities.
  */
+/* eslint-disable no-script-url */
 
 import { describe, it, expect } from 'vitest';
 import {

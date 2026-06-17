@@ -11,7 +11,6 @@ import {
   getDailyTrend,
   getComparison,
   getStreak,
-  getActivities,
 } from '../services/carbon.service.js';
 import { getDashboardMessage, getTrend } from '../services/insights.service.js';
 import { renderDonutChart, renderLineChart, renderLegend } from '../services/chart.service.js';
@@ -28,7 +27,6 @@ export function render(container) {
   const streak = getStreak();
   const trend = getTrend();
   const comparison = getComparison();
-  const activities = getActivities();
   const message = getDashboardMessage();
 
   const trendIcon = trend.direction === 'improving' ? '↓' : trend.direction === 'worsening' ? '↑' : '→';
