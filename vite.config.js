@@ -6,7 +6,7 @@ export default defineConfig({
   publicDir: 'public',
   build: {
     outDir: 'dist',
-    minify: 'terser',
+    minify: 'esbuild',
     sourcemap: false,
     rollupOptions: {
       input: resolve(__dirname, 'index.html'),
@@ -21,12 +21,6 @@ export default defineConfig({
         assetFileNames: 'assets/[name]-[hash][extname]',
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
-      },
-    },
-    terserOptions: {
-      compress: {
-        drop_console: false,
-        drop_debugger: true,
       },
     },
   },
