@@ -137,26 +137,6 @@ export function render(container) {
         </div>
       </div>
 
-      <!-- View Source Code Section -->
-      <div class="section animate-fade-up animate-delay-2" role="region" aria-label="Source code">
-        <div class="card" style="background: var(--surface-variant);">
-          <div class="card-header">
-            <h2 class="card-title">View Source Code</h2>
-          </div>
-          <div class="card-body">
-            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
-              Want to see how CarbonWise is built? Check out the full repository on GitHub to explore the zero-dependency vanilla JS architecture!
-            </p>
-            <a href="https://github.com/Siddharthshetty02/carbon_footprint_virtual_prompts" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="btn btn-primary" 
-               style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
-              <span aria-hidden="true">💻</span> View on GitHub
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
   `;
 

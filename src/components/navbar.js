@@ -51,18 +51,18 @@ export function renderNavbar(container) {
               <span>${escapeHtml(route.label)}</span>
             </a>
           `).join('')}
+          <a href="https://github.com/Siddharthshetty02/carbon_footprint_virtual_prompts"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="navbar-link"
+             role="menuitem"
+             title="View Source Code on GitHub">
+            <span aria-hidden="true">💻</span>
+            <span>Source Code</span>
+          </a>
         </div>
 
         <div class="navbar-actions">
-          <a href="https://github.com/Siddharthshetty02/carbon_footprint_virtual_prompts" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="btn btn-sm btn-ghost" 
-             style="text-decoration: none; display: flex; align-items: center; gap: 6px; margin-right: var(--space-2);"
-             title="View Source Code on GitHub">
-            <span aria-hidden="true">💻</span>
-            <span style="font-size: var(--font-size-sm); font-weight: 500;" class="hide-mobile">View Source Code</span>
-          </a>
 
           <button class="theme-toggle touch-target"
                   id="theme-toggle-btn"
@@ -94,6 +94,14 @@ export function renderNavbar(container) {
           <span>${escapeHtml(route.label)}</span>
         </a>
       `).join('')}
+      <a href="https://github.com/Siddharthshetty02/carbon_footprint_virtual_prompts"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="navbar-link"
+         role="menuitem">
+        <span aria-hidden="true">💻</span>
+        <span>Source Code</span>
+      </a>
     </div>
   `;
 
