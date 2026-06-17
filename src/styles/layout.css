@@ -269,3 +269,5 @@
   max-width: 400px;
   margin-bottom: var(--space-6);
 }
+
+@media (max-width: 768px) { .hide-mobile { display: none !important; } }
