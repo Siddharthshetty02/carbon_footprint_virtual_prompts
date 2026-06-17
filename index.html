@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" 
+    content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self';" />
+  <meta name="description" content="CarbonWise helps you understand, track, and reduce your carbon footprint through personalized insights and simple daily actions." />
+  <meta name="theme-color" content="#0a0f1c" />
+  <meta property="og:title" content="CarbonWise — Carbon Footprint Tracker" />
+  <meta property="og:description" content="Track and reduce your carbon footprint with personalized insights." />
+  <meta property="og:type" content="website" />
+
+  <title>CarbonWise — Carbon Footprint Tracker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/src/styles/variables.css" />
+  <link rel="stylesheet" href="/src/styles/reset.css" />
+  <link rel="stylesheet" href="/src/styles/accessibility.css" />
+  <link rel="stylesheet" href="/src/styles/layout.css" />
+  <link rel="stylesheet" href="/src/styles/components.css" />
+  <link rel="stylesheet" href="/src/styles/pages.css" />
+</head>
+<body>
+  <!-- Skip Navigation Link for Accessibility -->
+  <a href="#main-content" class="skip-link" id="skip-nav">Skip to main content</a>
+
+  <!-- Application Root -->
+  <div id="app" role="application" aria-label="CarbonWise Carbon Footprint Tracker">
+    
+    <!-- Navigation — injected by navbar component -->
+    <header id="app-header" role="banner">
+      <nav id="main-nav" role="navigation" aria-label="Main navigation"></nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="main-content" role="main" aria-live="polite" tabindex="-1">
+      <!-- Page content rendered by router -->
+      <div id="page-container" class="page-container">
+        <!-- Loading state -->
+        <div class="loading-screen" id="loading-screen" role="status" aria-label="Loading application">
+          <div class="loading-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+          </div>
+          <p class="loading-text">Loading CarbonWise...</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="app-footer" role="contentinfo" class="app-footer">
+      <div class="footer-content">
+        <p>&copy; 2026 CarbonWise. Built for a sustainable future.</p>
+        <p class="footer-sub">Data based on EPA & DEFRA emission factors. Your data stays on your device.</p>
+      </div>
+    </footer>
+
+    <!-- Toast Container for Notifications -->
+    <div id="toast-container" class="toast-container" role="log" aria-live="assertive" aria-atomic="true"></div>
+
+    <!-- Modal Container -->
+    <div id="modal-overlay" class="modal-overlay" role="presentation" aria-hidden="true"></div>
+  </div>
+
+  <noscript>
+    <div style="padding: 2rem; text-align: center; font-family: sans-serif;">
+      <h1>JavaScript Required</h1>
+      <p>CarbonWise requires JavaScript to run. Please enable JavaScript in your browser settings.</p>
+    </div>
+  </noscript>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

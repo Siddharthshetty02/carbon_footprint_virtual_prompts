@@ -1,0 +1,33 @@
+{
+  "name": "carbonwise",
+  "version": "1.0.0",
+  "description": "CarbonWise — Understand, track, and reduce your carbon footprint through personalized insights and simple actions.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src/ tests/"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5",
+    "vitest": "^3.2.1",
+    "@vitest/coverage-istanbul": "^3.2.1",
+    "happy-dom": "^16.8.0",
+    "eslint": "^9.28.0",
+    "@eslint/js": "^9.28.0",
+    "globals": "^16.1.0"
+  },
+  "keywords": [
+    "carbon-footprint",
+    "sustainability",
+    "environment",
+    "tracker",
+    "eco-friendly"
+  ],
+  "license": "MIT",
+  "author": "CarbonWise Team"
+}
