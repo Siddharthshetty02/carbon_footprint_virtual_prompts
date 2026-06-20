@@ -126,7 +126,7 @@ export function render(container) {
           <div class="card" style="margin-bottom: var(--space-6);" role="region" aria-label="Category comparison">
             <h3 class="card-title" style="margin-bottom: var(--space-4);">Category Comparison</h3>
             <div class="chart-container" style="aspect-ratio: 4/3; min-height: 200px;">
-              <canvas id="bar-chart" aria-label="Category emission comparison bar chart"></canvas>
+              <canvas id="bar-chart" role="img" aria-label="Category emission comparison bar chart"></canvas>
             </div>
           </div>
 

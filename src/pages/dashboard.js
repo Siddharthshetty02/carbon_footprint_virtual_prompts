@@ -75,7 +75,7 @@ export function render(container) {
             <span class="badge badge-accent">Monthly</span>
           </div>
           <div class="chart-container" style="aspect-ratio: 1/1; max-height: 280px;">
-            <canvas id="donut-chart" aria-label="Category breakdown donut chart"></canvas>
+            <canvas id="donut-chart" role="img" aria-label="Category breakdown donut chart"></canvas>
           </div>
           <div id="donut-legend"></div>
         </div>
@@ -86,7 +86,7 @@ export function render(container) {
             <span class="badge badge-info">Daily</span>
           </div>
           <div class="chart-container">
-            <canvas id="trend-chart" aria-label="30-day emission trend chart"></canvas>
+            <canvas id="trend-chart" role="img" aria-label="30-day emission trend chart"></canvas>
           </div>
         </div>
       </div>
