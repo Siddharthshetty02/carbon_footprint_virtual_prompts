@@ -319,12 +319,12 @@ function renderActivityList() {
           <div class="form-group">
             <label class="form-label form-label-required" for="edit-quantity">Quantity</label>
             <input class="form-input" type="number" id="edit-quantity" name="quantity"
-                   min="0" max="100000" step="0.1" required value="${escapeHtml(String(activity.quantity))}" />
+                   min="0" max="100000" step="0.1" required value="${activity.quantity}" />
           </div>
           <div class="form-group">
             <label class="form-label form-label-required" for="edit-date">Date</label>
             <input class="form-input" type="date" id="edit-date" name="date"
-                   value="${escapeHtml(activity.date)}" max="${toISODate()}" required />
+                   value="${activity.date}" max="${toISODate()}" required />
           </div>
           <div class="form-group">
             <label class="form-label" for="edit-note">Note (optional)</label>
